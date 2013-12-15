@@ -152,7 +152,7 @@
       <version.maven.source>2.2.1</version.maven.source>
       <version.maven.genjavadoc>0.5</version.maven.genjavadoc>
       <version.maven.scala>2.15.2</version.maven.scala>
-      <version.maven.surefire>2.14.1</version.maven.surefire>
+      <version.maven.surefire>2.16</version.maven.surefire>
       <version.maven.invoker>1.8</version.maven.invoker>
       <version.jacoco>0.5.10.201208310627</version.jacoco>
       <version.asm>3.3.1</version.asm>
