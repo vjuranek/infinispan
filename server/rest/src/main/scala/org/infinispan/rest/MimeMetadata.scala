@@ -141,7 +141,16 @@ class MimeMetadataBuilder extends EmbeddedMetadata.Builder {
    }
 
    override def build(): Metadata = {
-      new MimeExpirableMetadata(contentType, lifespan, lifespanUnit, maxIdle, maxIdleUnit)
+      val hasLifespanTimeout = hasLifespan
+      val hasMaxIdleTimeout = hasMaxIdle
+      if (hasLifespanTimeout && hasMaxIdleTimeout)
+        new MimeExpirableMetadata(contentType, lifespan, lifespanUnit, maxIdle, maxIdleUnit)
+      else if (hasLifespanTimeout)
+        new MimeLifespanExpirableMetadata(contentType, lifespan, lifespanUnit)
+      else if (hasMaxIdleTimeout)
+        new MimeMaxIdleExpirableMetadata(contentType, maxIdle, maxIdleUnit)
+      else
+        new MimeMetadata(contentType)
    }
 }
 
