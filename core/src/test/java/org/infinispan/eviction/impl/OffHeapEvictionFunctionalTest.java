@@ -15,8 +15,4 @@ public class OffHeapEvictionFunctionalTest extends BaseEvictionFunctionalTest {
       return StorageType.OFF_HEAP;
    }
 
-   @Test(enabled = false)
-   public void testSimpleEvictionMaxEntries() {
-      //TODO remove once ISPN-8216 is fixed
-   }
 }
